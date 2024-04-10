@@ -1,0 +1,588 @@
+ $DarkBrown: #3D3030;
+$White : #fff;
+$Orenge : #E4B89B;
+$Beige : #FFEFE4;
+$Brown : #775B5B;
+
+body{
+  font-family:"Segoe UI","小塚ゴシック Pro", sans-serif;
+}
+
+header{
+  width: 100%;
+  height: 5vw;
+  background-color: $DarkBrown;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw 0;
+  position: fixed;
+  margin: 0;
+  z-index: 100;
+  #headerLogo{
+    width: 12vw;
+    height: 3.8vw;
+    background-image: url(../img/HeaderLogo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #headerList{
+    transform: translateY(0.3vw);
+    ul{
+      display: flex;
+      a{
+        display: block;
+        padding:1.35em;
+        font-size:1.1vw;
+        color: $White;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        position: relative;
+        transition-duration: 0.2s;
+        span{
+          position: absolute;
+          display: inline-block;
+          left: 50%;
+          top:0.6vw;
+          transform: translateX(-50%);
+          white-space: nowrap;
+          font-size: 0.85vw;
+        }
+        &::after{
+          content: "";
+          width: 100%;
+          height: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: $Orenge;
+          transition-duration: 0.2s;
+        }
+        &:hover{
+          color: $Orenge;
+          &::after{
+            height: 0.3em;
+          }
+        }
+      }
+    }
+  }
+}
+
+#top{
+  padding-top: 5vw; //TEST
+  #topLogo{
+    display: inline-block;
+    width: 14vw;
+    height: 4.4vw;
+    background-image: url(../img/TopLogo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #topHead{
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1.5vw 0;
+  }
+
+  #topBody{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    #catch{
+      color: $Orenge;
+      font-size: 2.5vw;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      line-height: 5vw;
+      margin-left: 13%;
+      span{
+        font-size: 3vw;
+        color:transparent;
+        text-shadow: -2px -2px 0 $DarkBrown;
+        -webkit-text-stroke: 1px $DarkBrown;
+        text-stroke: 1px $DarkBrown;
+      }
+    }
+    #topImage{
+      width: 53vw;
+      border-radius: 200px 0 0 10px;
+    }
+  }
+  #scrollImg{
+    text-align: center;
+    width: 3vw;
+    height: 4vw;
+    margin: 2em auto;
+    background-image: url(../img/ScrollFootPrints.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+.contact{
+  display: block;
+  position: relative;
+  p:first-child{
+    color: $DarkBrown;
+    font-weight: bold;
+    font-size: 1.5vw;
+    letter-spacing: 0.1em;
+  }
+  .tell{
+    font-size: 2.13vw;
+    letter-spacing: 0.1em;
+    color: $Orenge;
+    font-weight: bold;
+  }
+  .tellIcon{
+    background-image: url(../img/tell.svg);
+    background-size: contain;
+    width: 6vw;
+    height: 6vw;
+    position: absolute;
+    top: -1vw;
+    left: -4vw;
+    filter: opacity(0.3)brightness(0.9);
+    z-index: -10;
+  }
+}
+h2{
+  width: 12em;
+  display:block;
+  text-align: center;
+  padding:1.5em 0 0.5em;
+  margin:0 auto 3vw;
+  font-size: clamp(18px, 1.7vw, 32px);
+  font-weight: bold;
+  color: $DarkBrown;
+  border-bottom: 0.1em solid $DarkBrown;
+  letter-spacing: 0.1em;
+}
+
+#concept{
+  background-image: url(../img/cafebackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  #conceptBg{
+    background-color: rgba(255, 239, 228, 0.9);
+    #conceptText{
+      font-family:"小塚ゴシック Pro", sans-serif;
+      color:$Brown;
+      font-weight: 600;
+      font-size: clamp(16px, 1.1vw, 24px);
+      text-align: center;
+      padding: 4vw 0;
+      margin-top: -3vw;
+      p{
+        line-height: 2.5em;
+        letter-spacing: 0.1em;
+        margin-bottom: 3em;
+        text-shadow: 0 0 0 $White;
+        text-shadow:1px 1px 10px rgba(255,255,255,0.2), -1px -1px 10px rgba(255,255,255,0.2),
+                    -1px 1px 10px rgba(255,255,255,0.2), 1px -1px 10px rgba(255,255,255,0.2),
+                    0px 1px 10px rgba(255,255,255,0.2),  0 -1px 10px rgba(255,255,255,0.2),
+                    -1px 0 10px rgba(255,255,255,0.2), 1px 0 10px rgba(255,255,255,0.2);
+      }
+    }
+  }
+}
+.dashedLine{
+  position: relative;
+  &::before{
+    content:"";
+    width: 100%;
+    height: 0.3vw;
+    position: absolute;
+    top: 0.3vw;
+    background-image: linear-gradient(to right,$DarkBrown 20px,transparent 10px);
+    background-size: 30px 100%;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+  }
+  &::after{
+    content:"";
+    width: 100%;
+    height: 0.3vw;
+    position: absolute;
+    bottom: 0.3vw;
+    background-image: linear-gradient(to right,$DarkBrown 20px,transparent 10px);
+    background-size: 30px 100%;
+    background-repeat: repeat-x;
+    opacity: 0.8;
+  }
+}
+#cat{
+  background-image: url(../img/FootPrints.svg);
+  background-size: 70vw;
+  padding-bottom: 5.5vw;
+  margin-bottom: -5.5vw;
+  #snsIcon{
+    display: flex;
+    justify-content: center;
+    gap:4vw;
+    img{
+      width: 4vw;
+      height: 4vw;
+      min-width: 60px;
+      min-height: 60px;
+      transition-duration: 0.5s;
+      &:hover{
+        // transform: rotate(-20deg) translateY(-0.4em);
+        filter: brightness(0.5);
+      }
+    }
+  }
+  #catList{
+    margin: 0 auto;
+    width: 67vw;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    row-gap:4vw;
+    padding:3.5vw 0 5vw;
+    .catListItem{
+      margin: auto;
+      background-color: $White;
+      border-radius: 10px;
+      padding: 1vw;
+      transition-duration: 0.2s;
+      border: 0.1vw solid $Brown;
+      box-shadow: 0 0 0 $Brown;
+      &:hover{
+        transform: translate(-0.2vw, -0.2vw);
+        box-shadow: 0.2vw 0.2vw 0 $Brown;
+      }
+      img{
+        width: 9vw;
+      }
+      p{
+        text-align: center;
+        padding: 0.3em;
+        color: $Brown;
+        font-size: clanp(14px,0.9vw 20px);
+      }
+      .catName{
+        padding: 0.4em;
+        font-weight: 700;
+        color: $DarkBrown;
+        font-size: clanp(15px,1vw 22px);
+      }
+    }
+  }
+}
+
+#event{
+  color: $DarkBrown;
+  background-color: $Beige;
+  overflow: hidden;
+  #eventContents{
+    display: flex;
+    width: 67vw;
+    margin: 0 auto;
+    padding:0 3vw 5vw;
+    justify-content: space-between;
+    position: relative;
+    #eventBG{
+      background-image: url(../img/BackGroundLogo.svg);
+      background-size: contain;
+      position: absolute;
+      filter: opacity(0.5);
+      width: 40vw;
+      height: 40vw;
+      min-width: 630px;
+      min-height: 630px;
+      top: -2vw;
+      left: 15vw;
+    }
+    #eventImg{
+      width: 40%;
+      min-width: 300px;
+      background-image: url(../img/catFood@2x.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px 40% 20px 40%;
+      z-index: 10;
+    }
+    #eventR{
+      width: 45%;
+      min-width: 430px;
+      text-align: center;
+      z-index: 10;
+      margin-left: 10vw;
+      #eventTitle{
+        font-size: clamp(24px,2vw,33px);
+        font-weight: bold;
+      }
+      #eventTime{
+        p{
+          display: inline-block;
+          font-size: clamp(24px,2vw,35px);
+          font-weight: bold;
+          color: $Beige;
+          background-color: $DarkBrown;
+          height: 1.5em;
+          width: 4.5em;
+          line-height: 1.5em;
+          border-radius: 1.5em;
+          letter-spacing: 0.05em;
+          margin: 0.8em 0.5em;
+        }
+      }
+      .eventText{
+        font-size: clamp(14px, 0.9vw, 24px);
+        letter-spacing: 0.15em;
+        line-height: 3em;
+        text-align: left;
+        font-weight: 550;
+        color: $Brown;
+        &+.eventText{
+          margin: 2.5vw 0 0.5vw;
+        }
+      }
+      .eventBtn{
+        p{
+          display: inline-block;
+          font-size: clamp(20px,1.5vw,30px);
+          font-weight: bold;
+          border: 0.1em solid $DarkBrown;
+          height: 2.5em;
+          width: 100%;
+          line-height: 2.2em;
+          border-radius: 2.5em;
+          letter-spacing: 0.05em;
+          background-color: transparent;
+          transition-duration: 0.2s;
+          &:hover{
+            background-color: $DarkBrown;
+            color: $Beige;
+          }
+        }
+      }
+    }
+  }
+}
+
+#drink{
+  #drinkContents{
+    display: flex;
+    margin: 0 auto;
+    #drinkL{
+      width: 30vw;
+      min-width: 440px;
+      margin-top: 2vw;
+      font-size: clamp(13px, 0.9vw, 24px);
+      letter-spacing: 0.15em;
+      line-height: 3em;
+      text-align: left;
+      font-weight: 550;
+      color: $Brown;
+      margin-left:19vw;
+      #drinkHeading{
+        display: flex;
+        width: 30vw;
+        min-width: 440px;
+        font-size: clamp(33px,2.2vw,50px);
+        font-weight: 800;
+        position: relative;
+        margin-bottom: 0.5vw;
+        &::before{
+          content: "×";
+          font-weight: bold;
+          font-size: 6em;
+          position: absolute;
+          top:-18%;
+          left:25%;
+          z-index: -10;
+          color: $Beige;
+        }
+        h3{
+          &:first-child{
+            margin-top: -3.7vw;
+          }
+          &:last-child{
+            margin-left: 3.5vw;
+          }
+        }
+      }
+    }
+    #drinkImg{
+      background-image: url(../img/LatteArt@2x.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position:left;
+      width: 40vw;
+      min-width: 625px;
+      margin: -8vw 3vw;
+    }
+  }
+}
+.listBtn{
+  color: $Orenge;
+  display: block;
+  font-size: clamp(20px,1.5vw,30px);
+  font-weight: bold;
+  border: 0.1em solid $Orenge;
+  height: 2.5em;
+  width: 15em;
+  line-height: 2.2em;
+  border-radius: 2.5em;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  transition-duration: 0.2s;
+  text-align: center;
+  margin: 3vw auto 2vw;
+  &:hover{
+    background-color: $Orenge;
+    color: $White;
+  }
+}
+
+#news{
+  #newsContents{
+    display: flex;
+    justify-content: space-around;
+    width: 67vw;
+    margin:4vw auto;
+    .newsItem{
+      color: $Brown;
+      width: 28vw;
+      letter-spacing: 0.1em;
+      .newsImg{
+        width: 100%;
+      }
+      .newsDate{
+        font-weight: 500;
+        margin:0.8em 0 -0.8em;
+        // display: inline-block;
+        font-size: clamp(16px,1vw ,22px);
+      }
+      .newsTitle{
+        color: $DarkBrown;
+        font-weight: 600;
+        font-size: clamp(16px,1.2vw, 24px);
+        margin: 0.8em 0;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+      .newsText{
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        line-height: 1.4em;
+        font-size: clamp(12px,0.8vw,18px);
+      }
+      .newsBtn{
+        float: right;
+        margin-top: 0.5em;
+        padding-bottom: 0.5em;
+        font-size: clanp(18px,1.1vw, 24px);
+        font-weight: bold;
+        position: relative;
+        transition-duration: 0.2s;
+        color: $DarkBrown;
+        filter: opacity(0.6);
+        &::before{
+          content: "";
+          width: 38%;
+          height: 0.3em;
+          background-color: $DarkBrown;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transition-duration: 0.2s;
+          filter: opacity(0.6);
+        }
+        &:hover{
+          filter: opacity(1);
+          &::before{
+            width: 100%;
+            filter: opacity(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+#access{
+  #accessContents{
+    width: 67vw;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding:1vw 0 3vw;
+    #accessL{
+      text-align: center;
+      img{
+        margin-bottom: 2vw;
+        width: 19vw;
+      }
+      .contact{
+        .tellIcon{
+          left:-2vw;
+        }
+      }
+      p:last-child{
+        font-weight: bold;
+        color: $Brown;
+        font-size: 1.2vw;
+        margin-top: 1vw;
+        padding-bottom: 3vw;
+      }
+    }
+    #accessInfo{
+      position: relative;
+      table{
+        font-size: clamp(16px,1.1vw,20px);
+        font-weight: bold;
+        color: $DarkBrown;
+        height: 100%;
+        th{
+          filter: brightness(0.9) opacity(0.5);
+          font-weight: 500;
+          padding-right: 2em;
+        }
+      }
+      #accessBgIcon{
+        position: absolute;
+        bottom: 0;
+        right: -5vw;
+        width: 10vw;
+        z-index: -10;
+      }
+    }
+  }
+  #googleMap{
+    width: 100%;
+  }
+}
+footer{
+  background-color: $DarkBrown;
+  color: $White;
+  text-align: center;
+  ul{
+    li{
+      display: inline-block;
+      a{
+        display: inline-block;
+        padding: 1em 1.8em;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        font-size: 0.9vw;
+        &:hover{
+          color: $Orenge;
+        }
+      }
+    }
+  }
+  small{
+    display: block;
+    padding-bottom: 0.5vw;
+  }
+}
